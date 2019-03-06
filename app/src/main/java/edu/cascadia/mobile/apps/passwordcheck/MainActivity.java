@@ -12,7 +12,8 @@ import edu.cascadia.mobile.apps.passwordcheck.databinding.ActivityMainBinding;
 //
 //    Remove new PasswordViewModel() instance
 //    Instead use the ViewModelProviders.of() syntax to get a reference to the persistent ViewModel
-//    Call the binding setLifeCycleOwner method and pass it the ViewModel reference
+//Call the binding setViewModel method and pass it the ViewModel reference
+        //Call the binding setLifeCycleOwner method and pass the reference to the application this
 public class MainActivity extends AppCompatActivity {
 
     //TODO: create a private ViewModel instance variable
@@ -27,10 +28,15 @@ private PasswordViewModel mPasswordViewModel;
 mPasswordViewModel = ViewModelProviders.of(this).get(PasswordViewModel.class);
 
         //TODO: Create a new binding using DataBindingUtil
-//ActivityMainBinding binding = DataBindingUtil.setContentView(R.layout.activity_main);
+
+        ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         //TODO: Create a new PasswordViewModel object
 
         //TODO: Set the binding's ViewModel to your new PasswordViewModel
+        //Call the binding setViewModel method and pass it the ViewModel reference
+        //Call the binding setLifeCycleOwner method and pass the reference to the application this
+binding.setViewModel(mPasswordViewModel);
+binding.setLifecycleOwner(this);
 
 
     }
