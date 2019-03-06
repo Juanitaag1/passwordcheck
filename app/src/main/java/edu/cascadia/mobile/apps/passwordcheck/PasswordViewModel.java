@@ -77,8 +77,8 @@ public class PasswordViewModel extends ViewModel{
 
     //5 Add a onPasswordTextChanged method that takes a CharSequence
 // and calls the setPassword  and setPasswordQuality
-    public void onPasswordTextChanged(CharSequence Cs){
-        setPassword(Cs.toString());
+    public void onPasswordTextChanged(CharSequence charS){
+        setPassword(charS.toString());
         getPasswordQuality();
 
     }
